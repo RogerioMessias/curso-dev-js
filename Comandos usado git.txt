@@ -1,0 +1,53 @@
+PS C:\Users\37680729832\Desktop\curso-dev-js> git init
+Initialized empty Git repository in C:/Users/37680729832/Desktop/curso-dev-js/.git/
+PS C:\Users\37680729832\Desktop\curso-dev-js> git config --global user.name "Rogério Messias"
+PS C:\Users\37680729832\Desktop\curso-dev-js> git config --global user.email "rogerio.messias@outlook.com"
+PS C:\Users\37680729832\Desktop\curso-dev-js> git add .
+PS C:\Users\37680729832\Desktop\curso-dev-js> git commit -m "Iniciando estrutura do projeto JS"
+[master (root-commit) 06547a6] Iniciando estrutura do projeto JS
+ 3 files changed, 159 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 exercicios-individuais/cmd/Atividade CMD - Estrutura de projeto responsivo.txt
+ create mode 100644 pesquisa.txt
+PS C:\Users\37680729832\Desktop\curso-dev-js> git remote add origin https://github.com/RogerioMessias/curso-dev-js.git
+PS C:\Users\37680729832\Desktop\curso-dev-js> git branch -M main
+PS C:\Users\37680729832\Desktop\curso-dev-js> it push -u origin main
+It : Não é possível processar a transformação do argumento em parâmetro 'test'. Não é possível converter o valor "main" do tipo "System.String" no tipo "System.Management.Automation.ScriptBlock".
+No linha:1 caractere:19
++ it push -u origin main
++                   ~~~~
+    + CategoryInfo          : InvalidData: (:) [It], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,It
+
+PS C:\Users\37680729832\Desktop\curso-dev-js> git push -u origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 2.38 KiB | 2.38 MiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/RogerioMessias/curso-dev-js.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\37680729832\Desktop\curso-dev-js> git add .
+PS C:\Users\37680729832\Desktop\curso-dev-js> git push -u origin main 
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS C:\Users\37680729832\Desktop\curso-dev-js> git pull 
+Already up to date.
+PS C:\Users\37680729832\Desktop\curso-dev-js> git push origin main
+Everything up-to-date
+PS C:\Users\37680729832\Desktop\curso-dev-js> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Comandos usado git.txt
+
+PS C:\Users\37680729832\Desktop\curso-dev-js> git log
+commit 06547a6bb63d938e57356958ffe7d57d3bd3331d (HEAD -> main, origin/main, origin/HEAD)
+Author: Rogério Messias <rogerio.messias@outlook.com>
+Date:   Fri Aug 1 20:12:35 2025 -0300
+
+    Iniciando estrutura do projeto JS
