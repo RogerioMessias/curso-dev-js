@@ -1,0 +1,135 @@
+Microsoft Windows [versão 10.0.19045.5965]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\User>cd Desktop
+
+C:\Users\User\Desktop>mkdir projeto_responsivo
+
+C:\Users\User\Desktop>cd projeto_responsivo
+
+C:\Users\User\Desktop\projeto_responsivo>mkdir public
+
+C:\Users\User\Desktop\projeto_responsivo>mkdir src
+
+C:\Users\User\Desktop\projeto_responsivo>mkdir docs
+
+C:\Users\User\Desktop\projeto_responsivo>cd public
+
+C:\Users\User\Desktop\projeto_responsivo\public>mkdir html
+
+C:\Users\User\Desktop\projeto_responsivo\public>mkdir css
+
+C:\Users\User\Desktop\projeto_responsivo\public>mkdir js
+
+C:\Users\User\Desktop\projeto_responsivo\public>mkdir media
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd media
+
+C:\Users\User\Desktop\projeto_responsivo\public\media>dir
+ O volume na unidade C não tem nome.
+ O Número de Série do Volume é 7C5A-DF77
+
+ Pasta de C:\Users\User\Desktop\projeto_responsivo\public\media
+
+28/07/2025  19:54    <DIR>          .
+28/07/2025  19:54    <DIR>          ..
+               0 arquivo(s)              0 bytes
+               2 pasta(s)   400.618.020.864 bytes disponíveis
+
+C:\Users\User\Desktop\projeto_responsivo\public\media>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd html
+
+C:\Users\User\Desktop\projeto_responsivo\public\html>type nul > home.html
+
+C:\Users\User\Desktop\projeto_responsivo\public\html>echo Projeto Responsivo >> home.html
+
+C:\Users\User\Desktop\projeto_responsivo\public\html>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd css
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>type nul > theme.css
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>echo body { margin: 0; padding: 0; background-color: ligthgray;} >> theme.css
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd media
+
+C:\Users\User\Desktop\projeto_responsivo\public\media>mkdir imagens
+
+C:\Users\User\Desktop\projeto_responsivo\public\media>mkdir fontes
+
+C:\Users\User\Desktop\projeto_responsivo\public\media>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd css
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>copy C:\Users\User\Desktop\projeto_responsivo\public\*.* C:\Users\User\Desktop\projeto_responsivo\docs
+C:\Users\User\Desktop\projeto_responsivo\public\*.*
+O sistema não pode encontrar o arquivo especificado.
+        0 arquivo(s) copiado(s).
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>copy theme.css docs
+        1 arquivo(s) copiado(s).
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd js
+
+C:\Users\User\Desktop\projeto_responsivo\public\js>type nul > responsivo.js
+
+C:\Users\User\Desktop\projeto_responsivo\public\js>echo console.log("Site responsivo pronto") >> responsivo.js
+
+C:\Users\User\Desktop\projeto_responsivo\public\js>type nul > utils.js
+
+C:\Users\User\Desktop\projeto_responsivo\public\js>echo console.log("Utilitarios carregados") >> utils.js
+
+C:\Users\User\Desktop\projeto_responsivo\public\js>cd public
+O sistema não pode encontrar o caminho especificado.
+
+C:\Users\User\Desktop\projeto_responsivo\public\js>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo\public>dir
+ O volume na unidade C não tem nome.
+ O Número de Série do Volume é 7C5A-DF77
+
+ Pasta de C:\Users\User\Desktop\projeto_responsivo\public
+
+28/07/2025  19:54    <DIR>          .
+28/07/2025  19:54    <DIR>          ..
+28/07/2025  20:10    <DIR>          css
+28/07/2025  19:55    <DIR>          html
+28/07/2025  20:13    <DIR>          js
+28/07/2025  20:02    <DIR>          media
+               0 arquivo(s)              0 bytes
+               6 pasta(s)   399.852.371.968 bytes disponíveis
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo>cd docs
+
+C:\Users\User\Desktop\projeto_responsivo\docs>del theme.css
+Não foi possível encontrar C:\Users\User\Desktop\projeto_responsivo\docs\theme.css
+
+C:\Users\User\Desktop\projeto_responsivo\docs>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo>cd css
+O sistema não pode encontrar o caminho especificado.
+
+C:\Users\User\Desktop\projeto_responsivo>cd ..
+
+C:\Users\User\Desktop>cd projeto_responsivo
+
+C:\Users\User\Desktop\projeto_responsivo>cd public
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd css
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>del theme.css
+
+C:\Users\User\Desktop\projeto_responsivo\public\css>cd ..
+
+C:\Users\User\Desktop\projeto_responsivo\public>cd html
+
+C:\Users\User\Desktop\projeto_responsivo\public\html>notepad home.html
+
+C:\Users\User\Desktop\projeto_responsivo\public\html>
