@@ -6,7 +6,7 @@
     <title>DOM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
     <div class="container mt-4">
         <header class="text-center">
@@ -54,9 +54,10 @@
             </div>
         </main>
     </div>
+
     <script>
 
-        // Exemplo 1
+        //EXEMPLO1
 
         const btnLer = document.querySelector("#btn-ler");
         const paragrafoExemplo = document.querySelector("#paragrafo-exemplo");
@@ -64,17 +65,17 @@
         function lerTextoParagrafo(){
 
             const textoParagrafo = paragrafoExemplo.textContent;
-            const textoParagrafo2 = document.querySelector("#paragrafo-exemplo").textContent;
+            const textoParagrafo2 =  document.querySelector("#paragrafo-exemplo").textContent;
 
             alert(textoParagrafo);
             console.log(textoParagrafo);
-
         }
+
+        // lerTextoParagrafo();
 
         btnLer.addEventListener('click', lerTextoParagrafo);
 
-        // Exemplo 2
-
+        //EXEMPLO 2
         const btnMudar = document.querySelector("#btn-mudar");
         const textoMudar = document.querySelector("#titulo-para-mudar");
 
@@ -82,31 +83,34 @@
             textoMudar.textContent = "Alterei o texto pro meu nome -> Rogério!!!";
         })
 
-        // Exemplo 3
-
+        //EXEMPLO 3
         const btnSaudacao = document.querySelector("#btn-saudacao");
         const inputNome = document.querySelector("#nome-usuario");
         const resultadoSaudacao = document.querySelector("#resultado-saudacao");
 
         btnSaudacao.addEventListener('click', function(){
             const valorInput = inputNome.value;
-            resultadoSaudacao.textContent = `Olá ${valorInput}, seja bem-vindo`
+            resultadoSaudacao.textContent = `Olá ${valorInput}, seja bem-vindo!`
         });
 
-        inputNome.addEventListener('input', function(){
+        // inputNome.addEventListener('input', function(){
+        //     const valorInput = inputNome.value;
+        //     resultadoSaudacao.textContent = `Olá ${valorInput}, seja bem-vindo!`
+        // });
+
+        inputNome.addEventListener('change', function(){
             const valorInput = inputNome.value;
-            resultadoSaudacao.textContent = `Olá ${valorInput}, seja bem-vindo`
-        })
+            resultadoSaudacao.textContent = `Olá ${valorInput}, seja bem-vindo!`
+        });
 
-        // Exemplo 4
-
+        //EXEMPLO 4
         const btnMudarCor = document.querySelector("#btn-mudar-cor");
         const inputCor = document.querySelector("#cor-fundo");
 
-        btnMudar.addEventListener('click', function(){
+        btnMudarCor.addEventListener('click', function(){
             document.body.style.backgroundColor = inputCor.value;
             document.body.removeAttribute('class');
-        })
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicios Condicionais </title>
+</head>
+<body>
+    
+    <p> F12 para ver os resultados </p>
+
+
+    <script>
+
+        // Exercicio 3
+        function exercicio3 (){
+            const numero = Number(prompt("Informe um número inteiro: "));
+            if (numero %2 == 0){
+                console.log('O número digitado é par!')
+            }else{
+                console.log('O número digitado é ímpar!')
+            }
+
+        }
+
+        // exercicio3();
+
+        // Exercicio 4
+        function exercicio4(){
+            const valor_compra = Number(prompt('Informe o valor da compra para calcular o valor do frete: '))
+            
+            if(valor_compra > 200){
+                console.log(`O valor final do seu pedido é ${valor} com fretes gratis`)
+            }else if (valor_compra >= 100){
+                console.log(`O valor final do seu pedido é ${valor + 15}`)
+            }else if (valor >= 0){
+                console.log(`O valor final do seu pedido é ${valor + 25}`)
+            }
+    
+            else {
+                console.log("valor de compra inválido inválido");
+            }
+        }
+
+        // exercicio4();
+
+        // Exercicio 9 
+        function exercicio9(){
+            const salario_funcionario = Number(prompt("Digite o salário: "))
+                const anos_servicos = Number(prompt('Informe o tempo de registro: '))
+
+                if (anos_servicos > 5){
+                    const salario_bonus =  (salario_funcionario * 5)/100 + salario_funcionario;
+                    console.log('Sálario com acréscimo de (5%): ' + salario_bonus);
+                }else{
+                    console.log('O funcionário não tem direito ao bonus.')
+                }
+            }
+        
+        // exercicio9()
+            
+        //Exercicio 10 
+
+        function exercicio10(){
+                const idade = parseInt(prompt("Qual é a sua idade?"));
+                const peso = parseFloat(prompt("Qual é o seu peso em kg?"));
+                const resfriado = prompt("Você está resfriado? (sim/não)").toLowerCase().trim();
+
+
+                const idadeValida = idade >= 18 && idade <= 69;
+                const pesoValido = peso > 50;
+                const estaSaudavel = resfriado === "não";
+
+                if (idadeValida && pesoValido && estaSaudavel) {
+                    alert("Você pode doar sangue");
+                } else {
+                    alert("Você não atende os requisitos");
+                }
+        }
+
+        // exercicio10()
+
+
+    </script>
+</body>
+</html>

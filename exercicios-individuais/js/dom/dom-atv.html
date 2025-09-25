@@ -58,20 +58,42 @@
     </div>
 
     <script>
-        // Exercicio 1 
+
         const valorEmReal = document.querySelector("#valor-real");
-        const btnConverter = document.querySelector("btn-converter");
+        const btnConverter = document.querySelector("#btn-converter");
         const resultado = document.querySelector("#resultado");
 
-        btnConverter.addEventListener('click',function(){
+        btnConverter.addEventListener('click', function(){
             const valorReal = Number(valorEmReal.value);
             const valorDolar = valorReal / 5.35;
-
-            resultado.textContent = `Valor em dólar ${valorDolar.toFixed(2)}`;
+            resultado.textContent = `Valor em dólar: ${valorDolar.toFixed(2)}`;
         })
+        
+         document.querySelector("#btn-converter").addEventListener('click', function(){
+            document.querySelector("#resultado").textContent = (Number(document.querySelector("#valor-real").value) / 5.35).toFixed(2);
+         });
 
-        
-        
+
+         document.querySelector("#btn-calcular-desconto").addEventListener('click', function(){
+            const preco = Number(document.querySelector("#preco").value);
+            const desconto = Number(document.querySelector("#desconto").value);
+
+            const valorFinal = preco - (preco * (desconto/100));
+
+            document.querySelector("#resultado_desconto").textContent = `R$ ${valorFinal.toFixed(2)}`
+         })
+
+         document.querySelector("#btn-calcular-imc").addEventListener('click', function(){
+            const peso = Number(document.querySelector("#peso").value);
+            const altura = Number(document.querySelector("#altura").value);
+
+            const imc = peso / altura ** 2
+
+            document.querySelector("#resultado_imc").textContent = imc.toFixed(2);
+         })
+         
+
+
 
     </script>
 
