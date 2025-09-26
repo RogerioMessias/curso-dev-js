@@ -1,86 +1,79 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Exercicios Condicionais </title>
+    <title>Exercícios Condicionais</title>
 </head>
-<body>
-    
-    <p> F12 para ver os resultados </p>
 
+<body>
+
+    <p>F12 para ver os resultados</p>
 
     <script>
 
-        // Exercicio 3
-        function exercicio3 (){
-            const numero = Number(prompt("Informe um número inteiro: "));
-            if (numero %2 == 0){
-                console.log('O número digitado é par!')
-            }else{
-                console.log('O número digitado é ímpar!')
+        function exercicio3() {
+            const numero = Number(prompt("Digite um número"))
+            if (numero % 2 === 0) {
+                console.log(`O valor ${numero} é par!`);
+            } else {
+                console.log(`O valor ${numero} é ímpar!`);
+            }
+        }
+
+        //exercicio3();
+
+        function exercicio4() {
+            const valor = Number(prompt("Informe o valor do produto"));
+            if (valor > 200) {
+                console.log(`O valor final do seu pedido é ${valor} com frete grátis`);
+            } else if (valor >= 100) {
+                console.log(`O valor final do seu pedido é ${valor + 15}`);
+            } else if (valor >= 0) {
+                console.log(`O valor final do seu pedido é ${valor + 25}`);
+            } else {
+                console.log("Valor de compra inválido");
+            }
+        }
+
+        //exercicio4();
+
+        function exercicio9() {
+            const salario = Number(prompt("Informe seu salário"));
+            const tempoServico = Number(prompt("Informe seu tempo de serviço em anos"));
+            if (tempoServico > 5){
+                const bonus = salario * 0.05;
+                //const bonus = salario * (5 / 100);
+                console.log(`Você tem direito ao bônus de ${bonus}`);
+            }
+            else{
+                console.log("Você não tem direito ao bônus por ter menos de 5 anos de registro");
             }
 
         }
 
-        // exercicio3();
+        //exercicio9();
 
-        // Exercicio 4
-        function exercicio4(){
-            const valor_compra = Number(prompt('Informe o valor da compra para calcular o valor do frete: '))
-            
-            if(valor_compra > 200){
-                console.log(`O valor final do seu pedido é ${valor} com fretes gratis`)
-            }else if (valor_compra >= 100){
-                console.log(`O valor final do seu pedido é ${valor + 15}`)
-            }else if (valor >= 0){
-                console.log(`O valor final do seu pedido é ${valor + 25}`)
-            }
-    
-            else {
-                console.log("valor de compra inválido inválido");
+        function exercicio10() {
+            const idade = Number(prompt("Informe sua idade"));
+            const peso = Number(prompt("Informe o seu peso"))
+            const resfriado = prompt("Está resfriado? (sim ou não)").toLowerCase().trim();
+            //lower => deixar tudo minúsculo
+            //trim => remove os espaços
+
+            if(idade >= 18 && idade <= 69 && peso > 50 && resfriado === "não"){
+                console.log("Você pode doar sangue! Obrigado por participar!");
+            } else {
+                console.log("Infelizmente você não está apto para doar sangue!");
             }
         }
 
-        // exercicio4();
-
-        // Exercicio 9 
-        function exercicio9(){
-            const salario_funcionario = Number(prompt("Digite o salário: "))
-                const anos_servicos = Number(prompt('Informe o tempo de registro: '))
-
-                if (anos_servicos > 5){
-                    const salario_bonus =  (salario_funcionario * 5)/100 + salario_funcionario;
-                    console.log('Sálario com acréscimo de (5%): ' + salario_bonus);
-                }else{
-                    console.log('O funcionário não tem direito ao bonus.')
-                }
-            }
-        
-        // exercicio9()
-            
-        //Exercicio 10 
-
-        function exercicio10(){
-                const idade = parseInt(prompt("Qual é a sua idade?"));
-                const peso = parseFloat(prompt("Qual é o seu peso em kg?"));
-                const resfriado = prompt("Você está resfriado? (sim/não)").toLowerCase().trim();
-
-
-                const idadeValida = idade >= 18 && idade <= 69;
-                const pesoValido = peso > 50;
-                const estaSaudavel = resfriado === "não";
-
-                if (idadeValida && pesoValido && estaSaudavel) {
-                    alert("Você pode doar sangue");
-                } else {
-                    alert("Você não atende os requisitos");
-                }
-        }
-
-        // exercicio10()
-
+        exercicio10();
 
     </script>
+
 </body>
+
 </html>

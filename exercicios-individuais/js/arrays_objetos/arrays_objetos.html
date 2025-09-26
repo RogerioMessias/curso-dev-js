@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Arrays e Objetos</title>
+</head>
+<body>
+    
+    <p>Aperte F12 para ver o resultado.</p>
+
+
+
+    <script>
+
+        // Exercicio 1
+        function exercicio1(){
+            const playlist = ["Nessum Dorma", "Ode to Joy", "Una furtiva lacrima"];
+            console.log(playlist[0]);
+            playlist.push("Carnival of the animals");
+            console.log(playlist);
+            playlist.pop();
+            console.log(playlist);
+            console.log(playlist.length);
+        }
+
+
+        // Exercicio 2
+        function exercicio2(){
+            const filme = {
+                titulo: "A arte de correr na chuva",
+                diretor: "Simon Curtis",
+                ano: 2019
+            }
+
+            console.log('O filme ', filme["titulo"], 'Digirido por', filme["diretor"], 'foi lançado em ', filme['ano'])
+            filme.personagens = ["Milo Ventimiglia", "Kevin Costner", "Amanda Seyfried"]
+
+            console.log(filme.personagens[0])
+            console.log(filme)
+        }
+    </script>
+
+</body>
+</html>

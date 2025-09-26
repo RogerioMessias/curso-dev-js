@@ -93,9 +93,21 @@
                 status = "Abaixo do Peso";
             }else if (imc >= 18.55 && imc <= 24.9){
                 status = "Peso Normal";
+            }else if (imc >= 25 && imc <= 29.9){
+                status = "Sobrepeso";
+                cor = 'Orange'
+            }else if (imc >= 30 && imc <= 34.9){
+                status = "Obesidade Grau I"
+                cor = 'red';
+            }else if (imc >= 35 && imc <= 39.9){
+                status = "Obesidade Grau II";
+                cor = 'firebrick';
+            }else {
+                status = "Obesidade Grau III"
             }
 
-            document.querySelector("#resultado_imc").textContent = imc.toFixed(2);
+            document.querySelector("#resultado_imc").textContent =imc.toFixed(2);
+            document.querySelector("#resultado_imc").style.color = cor;
          })
          
 
