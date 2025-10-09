@@ -1,43 +1,37 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplos repetições</title>
+    <title>Exemplos Repetições</title>
 </head>
 <body>
-    
-    <h2>Aperte F12 para ver o resultado.</h2>
 
-
+    <p>F12</p>
 
     <script>
 
-
-        const nomes = ['Rogério', 'Gabriel', 'Henrique', 'Pedro']
+        const nomes = ["Lucas", "João", "Pedro", "Maria", "Ana"];
         const numeros = [10,20,30,40,50];
         const alunos = [
-            {nome: 'Rogério', nota: 10},
-            {nome: 'Maria', nota: 10},
-            {nome: 'Pedro', nota: 7}
+            {nome: "Lucas", nota: 10},
+            {nome: "Maria", nota: 10},
+            {nome: "Pedro", nota: 7}
         ];
 
-
-        // For
-        // Inicio + condição + o que fazer
+        // FOR
+        //INICIO + CONDIÇÃO + O QUE FAZER
         for(let i = 1; i <= 5; i++){
             console.log(i);
-
         }
 
-        for(let i =0; i < nomes.length; i++){
-        console.log(`${nomes[i]}`)
+        for(let i = 0; i < nomes.length; i++){
+            console.log(`${nomes[i]}`);
         }
 
+        // WHILE
 
-
-
-        // While
         let contador = 0;
         while (contador < 3){
             console.log(contador);
@@ -50,26 +44,22 @@
             if (contador2 === 3){
                 continue;
             }
-
             if (contador2 === 5){
                 break;
             }
-            console.log(contador2);
+            console.log(contador2);            
         }
 
-
-        // Do while
-
-        let contador3 = 10;
+        // DO WHILE
+        let contador3 = 10
         do {
             console.log(contador3);
             contador3++;
-        }while(contador3 < 10);
+        } while(contador3 < 10);
 
+        //MÉTODOS DE ARRAY
 
-        //Métodos de Array 
-
-        //Foreach
+        //FOREACH
 
         nomes.forEach(function(nome){
             console.log(nome);
@@ -79,23 +69,29 @@
 
         alunos.forEach(aluno => console.log(aluno.nome));
 
-        //Map
+        //MAP
 
         const numerosDobrados = numeros.map(numero => numero * 2);
+        console.log(numerosDobrados);
+        
+        const numerosDrobradosFor = [];
+        for (let i = 0; i< numeros.length; i++){
+            numerosDrobradosFor.push(numeros[i] * 2);
+        }
 
-        const numerosDobradosFor = [];
-        for (let i = 0; i < numeros.length; i++)
-            numerosDobradosFor.push(numeros[i] * 2);
-
-
-        //Filter 
-        const numerosPares = numeros.filter(numero => % 2 !== 0);
+        //FILTER
+        const numerosPares = numeros.filter(numero => numero % 2 !== 0);
         console.log(numerosPares);
 
+        const alunosAprovados = alunos.filter(aluno => aluno.nota > 7);
+        console.log(alunosAprovados);
 
-        const alunosAprovados = alunos.filter(aluno => aluno.nota >8);
-        console.log(alunosAprovados)
+        //REDUCE
+        const somaNumeros = numeros.reduce((acumulador, numero) => acumulador + numero);
+        console.log(somaNumeros);
+        
+
     </script>
-
+    
 </body>
 </html>
