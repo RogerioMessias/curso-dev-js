@@ -45,7 +45,8 @@ function mostrarTelaLista(){
 function mostrarTelaCadastro(editar = false){
     telaLista.classList.add("d-none");
     telaCadastro.classList.remove("d-none");
-    formTitulo.textContent = editar === true ? "Editar Usuário":"Adicionar um Novo usuário"
+    console.log(editar);
+    formTitulo.textContent = editar === true ? "Editar Usuário" : "Adicionar Novo Usuário";
 }
 
 function salvarUsuario(){
@@ -70,19 +71,18 @@ function salvarUsuario(){
     }
 
     if (idEmEdicao){
-        const index = usuario.findIndex(user => user.id === idEmEdicao); // se localiza retorna a posição. caso contrário retorna - 1
+        const index = usuarios.findIndex(user => user.id === idEmEdicao); // se localiza, retorna a posição, caso contrário retorna -1
         if (index !== -1){
-            usuario[index] = usuario;
+            usuarios[index] = usuario;
         }
-    }else {
+    } else{
         usuarios.push(usuario);
-    }
+    }    
 
-    salvarNoStorage(); 
+    salvarNoStorage();    
     mostrarTelaLista();
     idEmEdicao = null;
-    form.reset();   
-
+    form.reset();
 }
 
 function salvarNoStorage(){
@@ -90,11 +90,13 @@ function salvarNoStorage(){
 }
 
 function editarUsuario(id){
-    const user = usuarios.find(user => user.id == id);
+
+    const user = usuarios.find(user => user.id === id);
     if (!user) return;
 
-    idEmEdicao = id;
+    idEmEdicao = id; //user.id
 
+    console.log(user);
 
     inputId.value = user.id;
     inputNome.value = user.nome;
@@ -104,7 +106,7 @@ function editarUsuario(id){
     inputRua.value = user.rua;
     inputNumero.value = user.numero;
     inputComplemento.value = user.complemento;
-    inputBairro.value = user.complemento;
+    inputBairro.value = user.bairro;
     inputCidade.value = user.cidade;
     inputEstado.value = user.estado;
     inputObs.value = user.obs;
@@ -114,8 +116,8 @@ function editarUsuario(id){
 }
 
 function excluirUsuario(id){
-    if(confirm("Você tem certeza que deseja excluir esse usuário?")){
-        // console.log(id);
+    if(confirm("Você tem certeza que deseja excluir esse usuário???")){
+        //console.log(id);
         usuarios = usuarios.filter(user => user.id !== id);
         salvarNoStorage();
         renderizarTabela();
@@ -139,10 +141,10 @@ function renderizarTabela(){
     });
 }
 
- async function buscarCep(){
+async function buscarCEP(){
     const cep = inputCep.value.replace(/\D/g,"");
-    
-    if (cep.lenght === 8){
+
+    if (cep.length === 8){
 
         try{
 
@@ -150,52 +152,51 @@ function renderizarTabela(){
 
             const dados = await resposta.json();
 
-            if (!dados.error){
-                //console.log(dados);
+            if (!dados.erro){
+                // console.log(dados);
                 inputRua.value = dados.logradouro;
                 inputBairro.value = dados.bairro;
                 inputCidade.value = dados.localidade;
                 inputEstado.value = dados.estado;
-
             }else{
-                alert("CEP inválido! Tente novamente.");
+                alert("CEP Inválido! Tente novamente!");
             }
 
-        }catch (error){
-            alert("Erro ao buscar CEP, verifique e tente novamente!");
+        } catch (error){
+            alert("Erro ao buscar CEP, verique o número tente novamente!");
             console.log(error);
         }
 
 
 
-
-
     }else{
-        alert("CEP inválido! Por favor, digite um CEP com 8 dígitos");
+        alert("CEP Inválido! Por favor, digite um CEP com 8 digitos");
     }
-
-
 }
 
 function buscarUsuario(){
+    //lowercase => deixa tudo minusculo
+    //trim => remove os espaços das extremos;
     const textoBusca = inputBusca.value.toLowerCase().trim();
 
-    if (textoBusca.lenght === 0){
+    if (textoBusca.length === 0){
         renderizarTabela();
         return;
     }
 
-    const usuariosFiltrados = usuarios.Filter(user =>{
+    const usuariosFiltrados = usuarios.filter(user =>{
         return user.nome.includes(textoBusca) || user.sobrenome.includes(textoBusca) || user.email.includes(textoBusca);
     });
 
     renderizarTabela();
+
 }
 
 function inicializacao(){
     btnAdicionar.addEventListener("click",mostrarTelaCadastro);
     btnVoltar.addEventListener("click",mostrarTelaLista);
-    btnBuscarCep,addEventListener("click",mostrarTelaLista);
+    //buscar cep
+    btnBuscarCep.addEventListener("click",buscarCEP);
 
     form.addEventListener("submit",salvarUsuario);
 
@@ -208,14 +209,16 @@ function inicializacao(){
 
         const id = Number(target.dataset.id);
 
-        if (isNaN(id)) return; // se o id é númerico
+        if (isNaN(id)) return; //se o id é numérico
 
         if (target.classList.contains("btn-danger")){
             excluirUsuario(id);
-        }else if(target.classList.contains("btn-warning")){
+        } else if(target.classList.contains("btn-warning")){
             editarUsuario(id);
         }
         
+
+
     });
 
     mostrarTelaLista();
